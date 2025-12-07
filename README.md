@@ -1,6 +1,6 @@
 # Stitcher
 
-Connect stuff with QUIC & RUST easily.
+Connect stuff with QUIC & RUST easily. This is a dependancy for my other works.
 
 ```rust
 let mut server = StitcherServer::new("127.0.0.1:8972".into());
