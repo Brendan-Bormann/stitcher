@@ -57,7 +57,7 @@ impl StitcherServer {
 
 pub struct StitcherClient {
     endpoint: Endpoint,
-    connection: Option<Connection>,
+    pub connection: Option<Connection>,
 }
 
 impl StitcherClient {
