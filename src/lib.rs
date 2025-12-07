@@ -174,7 +174,7 @@ mod tests {
         let _ = rustls::crypto::ring::default_provider().install_default();
 
         tokio::spawn(async {
-            let mut server = StitcherServer::new("127.0.0.1:8972".into());
+            let mut server = StitcherServer::new("127.0.0.1:3000".into());
             server
                 .accept_connections(|c| println!("server got a connection!"))
                 .await;
@@ -183,8 +183,8 @@ mod tests {
         // Give server time to start
         tokio::time::sleep(tokio::time::Duration::from_millis(100)).await;
 
-        let mut client = StitcherClient::new("127.0.0.1:8973".into());
-        client.connect("127.0.0.1:8972".into()).await;
+        let mut client = StitcherClient::new("127.0.0.1:3001".into());
+        client.connect("127.0.0.1:3000".into()).await;
         println!("connected client to server!");
         client.disconnect().await;
         println!("disconnected client from server!");
